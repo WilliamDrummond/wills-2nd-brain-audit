@@ -30,8 +30,9 @@ personal details (names, money, health) only as far as a finding needs.
 3. **Overall score** = the mean, rounded to one decimal, with a one-line verdict.
 4. **Fixes.** Top 5, ranked by impact over effort, each with the area it lifts, the exact files, the
    effort (minutes/hours) and a before → after example. Then quick wins (under 10 minutes each).
-5. **Write the report** as markdown (or an HTML page if asked) **outside** the audited brain, named
-   `brain-audit-<name>-<YYYY-MM-DD>.md`. Sections: Summary (score + verdict), Scorecard table,
+5. **Write the report** **outside** the audited brain as `brain-audit-<name>-<YYYY-MM-DD>.md`, plus a
+   matching `.html` page in the Next theme: start from `theme/report.html` (in this skill's folder) and
+   paste `theme/next.css` into its `<style>` so it's one file. Sections: Summary (score + verdict), Scorecard table,
    Findings by area, Top fixes, Quick wins, What's working (short, but say it). Write it plainly:
    no filler, no hype.
 

@@ -33,6 +33,8 @@ agrees to a change.
 5. **Recommendations**: max 7, ranked by payoff over effort, each with the problem it fixes, the
    change, the files touched, the risk and an effort estimate. Mark which are safe to do now.
 6. **Write it** to `arch-review-<name>-<YYYY-MM-DD>.md` (outside the reviewed repo unless the owner
-   wants it inside), with the inventory, diagram, context cost, scorecard and recommendations.
+   wants it inside), with the inventory, diagram, context cost, scorecard and recommendations, plus a
+   matching `.html` page in the Next theme (`theme/report.html` with `theme/next.css` pasted into its
+   `<style>`; `ok`/`drift`/`problem` as pills).
 
 Reply with the 3 biggest problems (one line each), the default context cost, and the review's path.

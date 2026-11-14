@@ -1,0 +1,67 @@
+/* Next theme: dark glass on a soft accent mesh, Geist type. Light when the reader's system is light,
+   or force either with <html data-look="dark|light">. Change --accent to recolour everything.
+   Fonts: <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500&display=swap"> */
+:root {
+  --accent: #2f6bff; --accent-ink: #8fb0ff; --on-accent: #fff;
+  --font: Geist, -apple-system, "SF Pro Text", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --bg: #0b0c10; --ink: #f3f4f6; --ink-2: #9aa0aa; --ink-3: rgba(235, 235, 245, .45);
+  --card: rgba(255, 255, 255, .04); --card-glass: rgba(16, 20, 32, .5); --line: rgba(255, 255, 255, .08); --hover: rgba(255, 255, 255, .06);
+  --glass: blur(18px) saturate(150%);
+  --red: #ff453a; --blue: #0a84ff; --green: #30d158; --yellow: #ffd60a;
+  --radius: 22px; --ease: cubic-bezier(.32, .72, 0, 1);
+  --mesh: radial-gradient(115vw 73vw at 0% 0%, color-mix(in oklch, var(--accent) 34%, transparent), transparent 62%),
+    radial-gradient(73vw 50vw at 28% -8%, color-mix(in oklch, var(--accent) 14%, transparent), transparent 70%);
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-look="dark"]) {
+  --bg: #f7f8fa; --ink: #13202d; --ink-2: #5d6b7a; --ink-3: rgba(19, 32, 45, .42);
+  --card: #fff; --card-glass: rgba(255, 255, 255, .82); --line: rgba(19, 32, 45, .09); --hover: rgba(19, 32, 45, .05);
+  --accent-ink: #2f6bff; --red: #ff3b30; --blue: #007aff; --green: #28a745; --yellow: #f2b600;
+  --mesh: radial-gradient(115vw 73vw at 0% 0%, color-mix(in oklch, var(--accent) 26%, transparent), transparent 62%),
+    radial-gradient(73vw 50vw at 28% -8%, color-mix(in oklch, var(--accent) 12%, transparent), transparent 70%);
+  color-scheme: light } }
+:root[data-look="light"] {
+  --bg: #f7f8fa; --ink: #13202d; --ink-2: #5d6b7a; --ink-3: rgba(19, 32, 45, .42);
+  --card: #fff; --card-glass: rgba(255, 255, 255, .82); --line: rgba(19, 32, 45, .09); --hover: rgba(19, 32, 45, .05);
+  --accent-ink: #2f6bff; --red: #ff3b30; --blue: #007aff; --green: #28a745; --yellow: #f2b600;
+  --mesh: radial-gradient(115vw 73vw at 0% 0%, color-mix(in oklch, var(--accent) 26%, transparent), transparent 62%),
+    radial-gradient(73vw 50vw at 28% -8%, color-mix(in oklch, var(--accent) 12%, transparent), transparent 70%);
+  color-scheme: light }
+
+* { box-sizing: border-box }
+html { background: var(--bg) }
+body { margin: 0; min-height: 100vh; background: var(--mesh), var(--bg); background-attachment: fixed; color: var(--ink);
+  font: 400 15px/1.5 var(--font); -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100% }
+main { max-width: 880px; margin: 0 auto; padding: 48px 16px 80px }
+h1 { font-size: clamp(28px, 6vw, 40px); font-weight: 700; letter-spacing: -.02em; margin: 0 0 6px }
+h2 { font-size: 20px; font-weight: 600; letter-spacing: -.01em; margin: 40px 0 12px }
+h3 { font-size: 16px; font-weight: 600; margin: 20px 0 6px }
+p, li { color: var(--ink) } .muted, small { color: var(--ink-2) }
+a { color: var(--accent-ink); text-decoration: none } a:hover { text-decoration: underline }
+code, pre { font-family: var(--mono); font-size: 13px } code { background: var(--hover); padding: 1px 6px; border-radius: 6px }
+pre { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; overflow-x: auto }
+
+/* Glass cards and a responsive grid of them. */
+.card { background: var(--card-glass); -webkit-backdrop-filter: var(--glass); backdrop-filter: var(--glass);
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px }
+.grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)) }
+
+/* The big score, a 0-10 bar and status pills. */
+.score { font: 700 clamp(56px, 14vw, 88px)/1 var(--font); letter-spacing: -.04em }
+.score small { font-size: .35em; font-weight: 500; color: var(--ink-2); letter-spacing: 0 }
+.bar { height: 8px; border-radius: 99px; background: var(--hover); overflow: hidden; margin-top: 8px }
+.bar > i { display: block; height: 100%; border-radius: inherit; background: var(--accent); width: calc(var(--v, 0) * 10%);
+  transition: width .6s var(--ease) }
+.bar.low > i { background: var(--red) } .bar.mid > i { background: var(--yellow) } .bar.high > i { background: var(--green) }
+.pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 99px;
+  background: var(--hover); color: var(--ink-2) }
+.pill.ok { background: color-mix(in srgb, var(--green) 18%, transparent); color: var(--green) }
+.pill.drift { background: color-mix(in srgb, var(--yellow) 18%, transparent); color: var(--yellow) }
+.pill.problem { background: color-mix(in srgb, var(--red) 18%, transparent); color: var(--red) }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px }
+th { text-align: left; font-weight: 600; color: var(--ink-2); font-size: 12px; text-transform: uppercase; letter-spacing: .04em }
+th, td { padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top }
+.table-wrap { overflow-x: auto }
+.card > :first-child { margin-top: 0 } .card > :last-child { margin-bottom: 0 }

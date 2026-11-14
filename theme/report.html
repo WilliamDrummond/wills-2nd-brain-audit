@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brain audit</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500&display=swap">
+<style>/* Paste theme/next.css here so the report is one self-contained file. */</style>
+</head>
+<body>
+<main>
+  <p class="muted">Brain audit · {{name}} · {{date}}</p>
+  <h1>{{one-line verdict}}</h1>
+  <div class="card" style="margin-top:20px">
+    <div class="score">{{6.4}}<small> / 10</small></div>
+  </div>
+
+  <h2>Scorecard</h2>
+  <div class="grid">
+    <!-- One card per area. --v is the score; bar class low (0-4), mid (5-6) or high (7-10). -->
+    <div class="card"><h3>Capture</h3><div class="muted">{{one line}}</div><div class="bar mid" style="--v:6"><i></i></div></div>
+  </div>
+
+  <h2>Top fixes</h2>
+  <div class="card">
+    <ol><li><strong>{{fix}}</strong> <span class="pill">{{area}}</span> <span class="muted">{{effort}}</span><br>{{before → after}}</li></ol>
+  </div>
+
+  <h2>Findings</h2>
+  <!-- For arch-review, mark each check with <span class="pill ok|drift|problem">. -->
+  <div class="table-wrap"><table><tr><th>Area</th><th>Finding</th><th>Evidence</th></tr></table></div>
+</main>
+</body>
+</html>
