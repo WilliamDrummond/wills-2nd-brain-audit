@@ -1,0 +1,109 @@
+[
+  {
+    "slug": "hub-home",
+    "label": "Our Home",
+    "folder": "home",
+    "glyph": "house-line",
+    "from": "#8fd18a",
+    "to": "#2f7a3f",
+    "tabs": []
+  },
+  {
+    "slug": "hub-languages",
+    "label": "Languages",
+    "folder": "fun",
+    "glyph": "translate",
+    "from": "#ff8b8b",
+    "to": "#b0101b",
+    "tabs": [
+      {
+        "slug": "japanese",
+        "label": "Japanese"
+      },
+      {
+        "slug": "korean",
+        "label": "Korean"
+      },
+      {
+        "slug": "languages",
+        "label": "Hangul"
+      }
+    ]
+  },
+  {
+    "slug": "hub-library",
+    "label": "Library",
+    "folder": "fun",
+    "glyph": "books",
+    "from": "#d9a066",
+    "to": "#7a4a1f",
+    "tabs": [
+      {
+        "slug": "books",
+        "label": "Books"
+      },
+      {
+        "slug": "topics",
+        "label": "Topics"
+      },
+      {
+        "slug": "podcasts",
+        "label": "Podcasts"
+      },
+      {
+        "slug": "terminal",
+        "label": "Terminal"
+      }
+    ]
+  },
+  {
+    "slug": "hub-inspo",
+    "label": "Inspo",
+    "folder": "projects",
+    "glyph": "swatches",
+    "from": "#ffb38a",
+    "to": "#d8432e",
+    "tabs": [
+      {
+        "slug": "inspo",
+        "label": "Inspo"
+      },
+      {
+        "slug": "ui-gallery",
+        "label": "UI Gallery"
+      }
+    ]
+  },
+  {
+    "slug": "hub-universe",
+    "label": "Universe",
+    "folder": "projects",
+    "glyph": "planet",
+    "from": "#7aa2ff",
+    "to": "#1b2f8f",
+    "tabs": [
+      {
+        "slug": "earth",
+        "label": "Brain Universe"
+      }
+    ]
+  },
+  {
+    "slug": "hub-office",
+    "label": "Office",
+    "folder": "work",
+    "glyph": "briefcase-metal",
+    "from": "#9fb4d8",
+    "to": "#2f4a7a",
+    "tabs": [
+      {
+        "slug": "pdfcraft",
+        "label": "PdfCraft"
+      },
+      {
+        "slug": "gridcraft",
+        "label": "GridCraft"
+      }
+    ]
+  }
+]

@@ -1,0 +1,172 @@
+/* Freedom shell tokens and the liquid-glass recipe. Dark by default; html[data-look="light"] for light.
+   Font: Geist 400-800 + Geist Mono 500. Icons: Phosphor 2.1.1 (regular, fill, bold). */
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500&display=swap");
+
+@property --mode { syntax: "<color>"; inherits: true; initial-value: #2f6bff }
+
+:root {
+  --os-top: 0px;
+  --accent: #2f6bff; --mode: var(--accent); --accent-ink: #8fb0ff; --accent-rgb: 47, 107, 255; --on-accent: #fff;
+  --font: Geist, -apple-system, "SF Pro Text", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --ink: #fff; --ink-2: rgba(235, 235, 245, .7); --ink-3: rgba(235, 235, 245, .45);
+  --tile: rgba(16, 20, 32, .5); --tile-line: rgba(255, 255, 255, .14); --tile-ink: #fff;
+  --glass: blur(18px) saturate(150%);
+  
+  --dock: color-mix(in srgb, var(--mode) 14%, rgba(34, 36, 46, .88)); --dock-line: rgba(255, 255, 255, .18); --pill: rgba(44, 46, 56, .88);
+  --group-glass: rgba(16, 20, 32, .42);
+  --label: #fff; --label-shadow: 0 1px 2px rgba(0, 0, 0, .45);
+  --sheet: rgba(30, 30, 33, .9); --group: rgba(255, 255, 255, .07); --line: rgba(84, 84, 88, .55); --field: rgba(118, 118, 128, .24);
+  --scrim: rgba(0, 0, 0, .42); --toast: rgba(44, 44, 48, .92); --menu: rgba(30, 31, 36, .95); --seg-on: #636366;
+  --desk-bg: #0b0c10; --desk-ink: #f3f4f6; --desk-2: #9aa0aa; --desk-3: #d6d9df; --desk-card: rgba(255, 255, 255, .04);
+  --desk-line: rgba(255, 255, 255, .08); --desk-hover: rgba(255, 255, 255, .06);
+  --red: #ff453a; --blue: #0a84ff; --green: #30d158; --yellow: #ffd60a;
+  --sb: max(env(safe-area-inset-top), 47px); --sb-app: max(env(safe-area-inset-top), 34px);
+  --dock-b: max(12px, calc(env(safe-area-inset-bottom) - 8px)); --dock-h: 92px; --pill-h: 30px;
+  --pw: min(100vw, 480px);
+  --icon: clamp(52px, calc(var(--pw) * .1527), 66px);
+  --igap: clamp(14px, calc(var(--pw) * .046), 22px);
+  --edge: clamp(14px, calc(var(--pw) * .0458), 22px);
+  --wedge: clamp(16px, calc(var(--pw) * .061), 28px);
+  --wcg: clamp(14px, calc(var(--pw) * .0509), 22px);
+  --wrg: clamp(10px, calc(var(--pw) * .0356), 16px);
+  --radius-w: clamp(18px, calc(var(--pw) * .056), 24px);
+  
+  --band-x: 16px; --band-up: 16px; --fab-ai: 46px; --fab-plus: 40px;
+  
+  --reserve: calc(var(--dock-b) + var(--dock-h) + var(--band-up) + var(--pill-h) / 2 + 23px + 6px);
+  
+  --tabbar: calc(var(--dock-b) + var(--dock-h));
+  --ease: cubic-bezier(.32, .72, 0, 1);
+  transition: --mode .6s ease;
+}
+:root[data-look="light"] {
+  --ink: #13202d; --ink-2: rgba(19, 32, 45, .66); --ink-3: rgba(19, 32, 45, .42);
+  --tile: rgba(255, 255, 255, .74); --tile-line: rgba(255, 255, 255, .7); --tile-ink: #1b2836;
+  --dock: color-mix(in srgb, var(--mode) 8%, rgba(248, 250, 253, .84)); --dock-line: rgba(255, 255, 255, .75); --pill: rgba(255, 255, 255, .86);
+  --group-glass: rgba(255, 255, 255, .6);
+  --label: #13202d; --label-shadow: none;
+  --sheet: rgba(242, 244, 248, .94); --group: rgba(255, 255, 255, .9); --line: rgba(60, 60, 67, .16); --field: rgba(118, 118, 128, .13);
+  --scrim: rgba(20, 30, 45, .26); --toast: rgba(255, 255, 255, .95); --menu: rgba(255, 255, 255, .97); --seg-on: #fff;
+  --desk-bg: #eef2f6; --desk-ink: #13202d; --desk-2: #5d6b7a; --desk-3: #2a3a4a; --desk-card: rgba(255, 255, 255, .72);
+  --desk-line: rgba(19, 32, 45, .09); --desk-hover: rgba(19, 32, 45, .05);
+  --red: #ff3b30; --blue: #007aff; --green: #28a745; --yellow: #f2b600;
+}
+:root[data-brain="partner"][data-look="light"] { --desk-bg: #e4ecf4 }
+
+:root[data-brain="me"][data-look="light"] { --desk-bg: #f7f8fa; --desk-card: #fff; --tile: #fff; --tile-line: rgba(19, 32, 45, .08);
+  --group-glass: rgba(255, 255, 255, .82); --dock: rgba(255, 255, 255, .88); --dock-line: rgba(19, 32, 45, .08); --sheet: rgba(248, 249, 251, .96) }
+:root.os-desktop { --fab-ai: 56px; --fab-plus: 48px }
+
+:root[data-look="light"][data-wall="dark"] { --label: #fff; --label-shadow: 0 1px 2px rgba(0, 0, 0, .45) }
+:root[data-look="dark"][data-wall="light"] { --label: #13202d; --label-shadow: none }
+
+html, body { margin: 0; height: 100%; overflow: hidden; overscroll-behavior: none; background: #000 }
+html[data-look="light"], html[data-look="light"] body { background: #cfdeec }
+html[data-brain="me"][data-look="light"], html[data-brain="me"][data-look="light"] body { background: #f7f8fa }
+html.os-desktop, html.os-desktop body { background: var(--desk-bg) }
+body { font: 400 15px/1.35 var(--font); color: var(--ink); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%; text-size-adjust: 100%; -webkit-tap-highlight-color: transparent }
+:where(.os, .os-layer, .os-toasts) button { font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; cursor: pointer;
+  -webkit-tap-highlight-color: transparent; text-align: inherit }
+:where(.os, .os-layer) [hidden] { display: none !important }
+:where(.os, .os-layer) :focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px }
+:where(.os, .os-layer) :focus:not(:focus-visible) { outline: none }
+
+:root {
+  --lg-blur: blur(24px) saturate(175%);
+  --lg-edge: rgba(255, 255, 255, .16); --lg-hi: rgba(255, 255, 255, .24); --lg-sheen: rgba(255, 255, 255, .1); --lg-drop: rgba(0, 0, 0, .55);
+  --radius-w: clamp(20px, calc(var(--pw) * .062), 26px);
+  --dock: color-mix(in srgb, var(--mode) 12%, rgba(30, 32, 42, .6)); --dock-line: rgba(255, 255, 255, .2); --pill: rgba(40, 42, 52, .72);
+  --tile: rgba(18, 20, 30, .42); --group-glass: rgba(16, 20, 32, .38);
+  --desk-card: rgba(255, 255, 255, .055);
+}
+:root[data-look="light"] {
+  --lg-edge: rgba(255, 255, 255, .8); --lg-hi: rgba(255, 255, 255, .95); --lg-sheen: rgba(255, 255, 255, .55); --lg-drop: rgba(30, 45, 80, .24);
+  --dock: color-mix(in srgb, var(--mode) 8%, rgba(250, 251, 253, .5)); --dock-line: rgba(255, 255, 255, .85); --pill: rgba(255, 255, 255, .7);
+  --group-glass: rgba(255, 255, 255, .55); --desk-card: rgba(255, 255, 255, .58);
+}
+
+:root[data-brain="me"][data-look="light"] { --tile: rgba(255, 255, 255, .62); --tile-line: rgba(255, 255, 255, .85); --group-glass: rgba(255, 255, 255, .6);
+  --dock: rgba(255, 255, 255, .5); --dock-line: rgba(255, 255, 255, .9); --desk-card: rgba(255, 255, 255, .62); --lg-drop: rgba(40, 52, 80, .2) }
+
+:root[data-look="light"][data-wall="dark"] { --lg-drop: rgba(0, 0, 0, .45) }
+
+.os-wtile, .os-wempty:not(.desk) { background: linear-gradient(160deg, var(--lg-sheen), transparent 42%), var(--tile); border: 1px solid var(--lg-edge);
+  -webkit-backdrop-filter: var(--lg-blur); backdrop-filter: var(--lg-blur);
+  box-shadow: inset 0 1px 0 var(--lg-hi), 0 12px 30px -16px var(--lg-drop), 0 1px 2px rgba(0, 0, 0, .05) }
+.os-dock { border: 1px solid var(--dock-line); border-radius: 38px;
+  background: linear-gradient(170deg, var(--lg-sheen), transparent 55%), var(--dock);
+  -webkit-backdrop-filter: blur(26px) saturate(185%); backdrop-filter: blur(26px) saturate(185%);
+  box-shadow: inset 0 1px 0 var(--lg-hi), inset 0 -1px 0 rgba(255, 255, 255, .06), 0 18px 40px -18px var(--lg-drop) }
+.os-pill, .os-fab { background: linear-gradient(160deg, var(--lg-sheen), transparent 60%), var(--pill); border: 1px solid var(--lg-edge);
+  -webkit-backdrop-filter: var(--lg-blur); backdrop-filter: var(--lg-blur) }
+.os-pill { box-shadow: inset 0 1px 0 var(--lg-hi), 0 8px 22px -12px var(--lg-drop) }
+.os-fab, [data-look="light"] .os-fab { box-shadow: inset 0 1px 0 var(--lg-hi), 0 10px 26px -12px var(--lg-drop) }
+.os-eb-add { background: linear-gradient(160deg, var(--lg-sheen), transparent 60%), var(--pill); box-shadow: inset 0 1px 0 var(--lg-hi), 0 0 0 1px var(--lg-edge) }
+
+.os-field, .os-recent-row, .os-group { background: linear-gradient(160deg, var(--lg-sheen), transparent 40%), var(--group-glass);
+  -webkit-backdrop-filter: var(--lg-blur); backdrop-filter: var(--lg-blur); box-shadow: inset 0 1px 0 var(--lg-hi), inset 0 0 0 1px var(--lg-edge), 0 10px 28px -18px var(--lg-drop) }
+.os-field { border-radius: 14px }
+.os-recent-row { border-radius: 22px }
+.os-group { border-radius: 20px }
+
+.os-grp-h { margin: 0 0 6px; padding: 6px 15px 7px; border-radius: 999px; font-size: 19px; color: var(--ink);
+  background: linear-gradient(160deg, var(--lg-sheen), transparent 60%), var(--group-glass); -webkit-backdrop-filter: var(--lg-blur); backdrop-filter: var(--lg-blur);
+  box-shadow: inset 0 1px 0 var(--lg-hi), inset 0 0 0 1px var(--lg-edge), 0 8px 20px -14px var(--lg-drop) }
+
+.os-tile > i { position: relative }
+.os-tile::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .26), rgba(255, 255, 255, .06) 46%, rgba(255, 255, 255, 0) 54%) }
+.os-tile { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), inset 0 0 0 .5px rgba(255, 255, 255, .18), inset 0 -2px 6px rgba(0, 0, 0, .14), 0 8px 18px -8px rgba(0, 0, 0, .38) }
+.os-row .os-tile, .os-at .os-tile, .os-rd .os-tile { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), 0 2px 6px -2px rgba(0, 0, 0, .25) }
+
+.os-sheet { border-radius: 26px 26px 0 0; background: linear-gradient(180deg, var(--lg-sheen), transparent 140px), var(--sheet);
+  box-shadow: inset 0 1px 0 var(--lg-hi), 0 -12px 44px rgba(0, 0, 0, .3) }
+.os-sheet-wrap.desk .os-sheet { border-radius: 24px; box-shadow: inset 0 1px 0 var(--lg-hi), 0 30px 80px -20px rgba(0, 0, 0, .55), 0 0 0 1px var(--lg-edge) }
+.os-sheet-wrap.side .os-sheet { border-radius: 0 }
+.os-sheet .os-group, .os-sheet .os-mlist { box-shadow: inset 0 0 0 .5px var(--lg-edge) }
+.os-menu { border-radius: 20px; background: linear-gradient(170deg, var(--lg-sheen), transparent 120px), var(--menu);
+  box-shadow: inset 0 1px 0 var(--lg-hi), 0 24px 60px -16px rgba(0, 0, 0, .55), 0 0 0 1px var(--desk-line) }
+.os-toast { background: linear-gradient(170deg, var(--lg-sheen), transparent 70%), var(--toast); box-shadow: inset 0 1px 0 var(--lg-hi), 0 12px 32px -10px rgba(0, 0, 0, .45), 0 0 0 .5px var(--lg-edge) }
+.os-az-bubble { box-shadow: inset 0 1px 0 var(--lg-hi), 0 0 0 1px var(--lg-edge), 0 8px 24px -6px rgba(0, 0, 0, .45) }
+
+.os-launch-tile { border-color: rgba(255, 255, 255, .22);
+  background: linear-gradient(160deg, rgba(255, 255, 255, .2), transparent 45%), linear-gradient(160deg, color-mix(in srgb, var(--a) 46%, transparent), color-mix(in srgb, var(--a) 12%, rgba(255, 255, 255, .04)));
+  -webkit-backdrop-filter: blur(20px) saturate(170%); backdrop-filter: blur(20px) saturate(170%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .36), inset 0 -1px 0 rgba(255, 255, 255, .06), 0 18px 40px -16px rgba(0, 0, 0, .5) }
+.os-launch-ic { position: relative; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), 0 8px 18px color-mix(in srgb, var(--a) 45%, transparent);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0) 52%), var(--a) }
+
+[data-brain="me"][data-look="light"].os-desktop .os-wash {
+  background: radial-gradient(115vw 73vw at 0% 0%, color-mix(in oklch, var(--mode) 34%, transparent), transparent 62%),
+    radial-gradient(80vw 60vw at 100% 100%, rgba(170, 186, 210, .5), transparent 65%),
+    radial-gradient(60vw 45vw at 70% 30%, rgba(214, 222, 236, .55), transparent 70%), var(--desk-bg) }
+.os-desktop { --lg-edge-d: rgba(255, 255, 255, .1) }
+[data-look="light"].os-desktop { --lg-edge-d: rgba(255, 255, 255, .9) }
+.os-rail { background: linear-gradient(180deg, var(--lg-sheen), transparent 30%), color-mix(in oklch, var(--desk-bg) 50%, transparent); border-right-color: var(--lg-edge-d, var(--desk-line));
+  -webkit-backdrop-filter: blur(24px) saturate(170%); backdrop-filter: blur(24px) saturate(170%); box-shadow: inset -1px 0 0 var(--desk-line), 8px 0 30px -24px var(--lg-drop) }
+.os-mpill { background: linear-gradient(160deg, var(--lg-sheen), transparent 60%), color-mix(in oklch, var(--desk-bg) 60%, transparent); border-color: var(--lg-edge-d, var(--desk-line));
+  -webkit-backdrop-filter: var(--lg-blur); backdrop-filter: var(--lg-blur); box-shadow: inset 0 1px 0 var(--lg-hi), 0 8px 24px -14px var(--lg-drop) }
+.os-card { border-radius: 22px; border-color: var(--lg-edge-d, var(--desk-line)); background: linear-gradient(160deg, var(--lg-sheen), transparent 40%), var(--desk-card);
+  -webkit-backdrop-filter: blur(20px) saturate(160%); backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: inset 0 1px 0 var(--lg-hi), 0 14px 34px -20px var(--lg-drop) }
+.os-card:hover { border-color: color-mix(in oklch, var(--lg-edge-d, var(--desk-line)) 60%, var(--accent) 40%) }
+.os-chip:not(.pri) { background: var(--desk-card); box-shadow: inset 0 1px 0 var(--lg-hi) }
+.os-chip:not(.pri):hover { background: color-mix(in srgb, var(--desk-card), var(--desk-ink) 6%) }
+.os-desktop .os-fab { background: linear-gradient(160deg, var(--lg-sheen), transparent 60%), color-mix(in oklch, var(--desk-bg) 62%, transparent); border-color: var(--lg-edge-d, var(--desk-line));
+  box-shadow: inset 0 1px 0 var(--lg-hi), 0 16px 36px -14px var(--lg-drop) }
+[data-look="light"].os-desktop .os-fab { background: linear-gradient(160deg, var(--lg-sheen), transparent 60%), rgba(255, 255, 255, .62) }
+.os-desktop .os-abar { background: linear-gradient(180deg, var(--lg-sheen), transparent), color-mix(in oklch, var(--desk-bg) 88%, var(--mode)); box-shadow: inset 0 1px 0 var(--lg-hi) }
+.os-ai-wrap.desk > .os-ai { border-radius: 24px }
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  :root { --tile: rgb(30, 33, 44); --dock: rgb(36, 38, 48); --pill: rgb(48, 50, 60); --group-glass: rgb(30, 33, 44); --desk-card: rgb(22, 24, 30) }
+  :root[data-look="light"] { --tile: #fff; --dock: rgb(248, 249, 251); --pill: #fff; --group-glass: #fff; --desk-card: #fff }
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root { --tile: rgb(30, 33, 44); --dock: rgb(36, 38, 48); --pill: rgb(48, 50, 60); --group-glass: rgb(30, 33, 44); --desk-card: rgb(22, 24, 30) }
+  :root[data-look="light"], :root[data-brain="me"][data-look="light"] { --tile: #fff; --dock: rgb(248, 249, 251); --pill: #fff; --group-glass: #fff; --desk-card: #fff }
+  .os-wtile, .os-wempty, .os-dock, .os-pill, .os-fab, .os-field, .os-recent-row, .os-group, .os-grp-h, .os-card, .os-rail, .os-mpill, .os-launch-tile {
+    -webkit-backdrop-filter: none; backdrop-filter: none }
+}

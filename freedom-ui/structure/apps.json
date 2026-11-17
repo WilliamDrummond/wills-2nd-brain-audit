@@ -1,0 +1,371 @@
+{
+  "note": "A sample of the apps, not the full list. look = Phosphor fill glyph on a 135deg gradient from -> to.",
+  "folders": [
+    {
+      "id": "health",
+      "label": "Health"
+    },
+    {
+      "id": "home",
+      "label": "Home & Family"
+    },
+    {
+      "id": "work",
+      "label": "Work & Money"
+    },
+    {
+      "id": "projects",
+      "label": "Projects"
+    },
+    {
+      "id": "fun",
+      "label": "Fun"
+    }
+  ],
+  "apps": [
+    {
+      "slug": "lift",
+      "label": "Lift Log",
+      "folder": "health",
+      "glyph": "barbell",
+      "from": "#63c2b9",
+      "to": "#1f6f6a"
+    },
+    {
+      "slug": "health",
+      "label": "Health",
+      "folder": "health",
+      "glyph": "heartbeat",
+      "from": "#ff8a76",
+      "to": "#b3261e"
+    },
+    {
+      "slug": "stride",
+      "label": "Running",
+      "folder": "health",
+      "glyph": "sneaker-move",
+      "from": "#7fd3ff",
+      "to": "#1f3fbf"
+    },
+    {
+      "slug": "iifym",
+      "label": "Macros",
+      "folder": "health",
+      "glyph": "hamburger",
+      "from": "#ffb05c",
+      "to": "#c2410c"
+    },
+    {
+      "slug": "calm",
+      "label": "Calm",
+      "folder": "health",
+      "glyph": "moon-stars",
+      "from": "#9db4ff",
+      "to": "#1d2f6b"
+    },
+    {
+      "slug": "recipes",
+      "label": "Recipes",
+      "folder": "health",
+      "glyph": "cooking-pot",
+      "from": "#f4a261",
+      "to": "#b4531f"
+    },
+    {
+      "slug": "chat",
+      "label": "Chat",
+      "folder": "home",
+      "glyph": "chats-circle",
+      "from": "#8fb3ff",
+      "to": "#2f4fb8"
+    },
+    {
+      "slug": "brain",
+      "label": "Brain",
+      "folder": "home",
+      "glyph": "tree",
+      "from": "#8ff6ff",
+      "to": "#0b5f6b"
+    },
+    {
+      "slug": "atlas",
+      "label": "Notes",
+      "folder": "home",
+      "glyph": "graph",
+      "from": "#b39bff",
+      "to": "#4b2fb0"
+    },
+    {
+      "slug": "phone",
+      "label": "Phone",
+      "folder": "home",
+      "glyph": "phone",
+      "from": "#5fe07a",
+      "to": "#1f9a3c"
+    },
+    {
+      "slug": "how",
+      "label": "How it works",
+      "folder": "home",
+      "glyph": "flow-arrow",
+      "from": "#c3a6ff",
+      "to": "#5b3fd1"
+    },
+    {
+      "slug": "todo",
+      "label": "To-do",
+      "folder": "home",
+      "glyph": "check-circle",
+      "from": "#6f97ff",
+      "to": "#1d4fd1"
+    },
+    {
+      "slug": "calendar",
+      "label": "Calendar",
+      "folder": "home",
+      "glyph": "calendar-dots",
+      "from": "#7fb0ff",
+      "to": "#1a73e8"
+    },
+    {
+      "slug": "inspo",
+      "label": "Inspo",
+      "folder": "projects",
+      "glyph": "swatches",
+      "from": "#ffb38a",
+      "to": "#d8432e"
+    },
+    {
+      "slug": "ui-gallery",
+      "label": "UI Gallery",
+      "folder": "projects",
+      "glyph": "sparkle",
+      "from": "#9fd4ff",
+      "to": "#4b3fd1"
+    },
+    {
+      "slug": "kanban",
+      "label": "Kanban",
+      "folder": "projects",
+      "glyph": "kanban",
+      "from": "#9b95ff",
+      "to": "#3f37c9"
+    },
+    {
+      "slug": "earth",
+      "label": "Brain Universe",
+      "folder": "home",
+      "glyph": "planet",
+      "from": "#7aa2ff",
+      "to": "#1b2f8f"
+    },
+    {
+      "slug": "topics",
+      "label": "Topics",
+      "folder": "work",
+      "glyph": "play-circle",
+      "from": "#ff6a5c",
+      "to": "#b3121b"
+    },
+    {
+      "slug": "terminal",
+      "label": "Terminal",
+      "folder": "fun",
+      "glyph": "terminal-window",
+      "from": "#5fd8e8",
+      "to": "#0b6f7f"
+    },
+    {
+      "slug": "finances",
+      "label": "Finances",
+      "folder": "work",
+      "glyph": "wallet",
+      "from": "#7fd6a8",
+      "to": "#17795a"
+    },
+    {
+      "slug": "pdfcraft",
+      "label": "PdfCraft",
+      "folder": "work",
+      "glyph": "file-pdf",
+      "from": "#ff8a7a",
+      "to": "#b70228"
+    },
+    {
+      "slug": "gridcraft",
+      "label": "GridCraft",
+      "folder": "work",
+      "glyph": "table",
+      "from": "#7fd6a8",
+      "to": "#17795a"
+    },
+    {
+      "slug": "stocks",
+      "label": "Stocks",
+      "folder": "work",
+      "glyph": "chart-line-up",
+      "from": "#5fd39a",
+      "to": "#14633f"
+    },
+    {
+      "slug": "bestprice",
+      "label": "Best Price",
+      "folder": "work",
+      "glyph": "tag",
+      "from": "#ffb36b",
+      "to": "#c2570c"
+    },
+    {
+      "slug": "japanese",
+      "label": "Japanese",
+      "folder": "fun",
+      "glyph": "translate",
+      "from": "#ff6b6b",
+      "to": "#b0101b"
+    },
+    {
+      "slug": "transcribe",
+      "label": "Transcribe",
+      "folder": "home",
+      "glyph": "waveform",
+      "from": "#7aa7ff",
+      "to": "#2f4fb8"
+    },
+    {
+      "slug": "drive",
+      "label": "Drive",
+      "folder": "home",
+      "glyph": "folders",
+      "from": "#7fb0ff",
+      "to": "#1f56c8"
+    },
+    {
+      "slug": "cinema",
+      "label": "Cinema",
+      "folder": "fun",
+      "glyph": "film-strip",
+      "from": "#a58bff",
+      "to": "#4c2fc4"
+    },
+    {
+      "slug": "composer",
+      "label": "Composer",
+      "folder": "fun",
+      "glyph": "hand-swipe-right",
+      "from": "#ffcf6b",
+      "to": "#5b2fc4"
+    },
+    {
+      "slug": "crate",
+      "label": "Crate",
+      "folder": "fun",
+      "glyph": "vinyl-record",
+      "from": "#ff8a5c",
+      "to": "#7a2ec4"
+    },
+    {
+      "slug": "podcasts",
+      "label": "Podcasts",
+      "folder": "fun",
+      "glyph": "headphones",
+      "from": "#b48cff",
+      "to": "#5b21b6"
+    },
+    {
+      "slug": "books",
+      "label": "Books",
+      "folder": "fun",
+      "glyph": "books",
+      "from": "#d9a066",
+      "to": "#7a4a1f"
+    },
+    {
+      "slug": "news",
+      "label": "News",
+      "folder": "home",
+      "glyph": "newspaper",
+      "from": "#ff8a76",
+      "to": "#c2321f"
+    },
+    {
+      "slug": "games",
+      "label": "Games",
+      "folder": "fun",
+      "glyph": "game-controller",
+      "from": "#b29dff",
+      "to": "#4a32a8"
+    },
+    {
+      "slug": "pantry",
+      "label": "Pantry",
+      "folder": "home",
+      "glyph": "basket",
+      "from": "#b9d77a",
+      "to": "#4f7a28"
+    },
+    {
+      "slug": "cats",
+      "label": "Pets",
+      "folder": "home",
+      "glyph": "cat",
+      "from": "#f2b26b",
+      "to": "#9a4a16"
+    },
+    {
+      "slug": "chores",
+      "label": "Chores",
+      "folder": "home",
+      "glyph": "broom",
+      "from": "#7fd6c2",
+      "to": "#1f7a6a"
+    },
+    {
+      "slug": "memes",
+      "label": "Memes",
+      "folder": "home",
+      "glyph": "crown-simple",
+      "from": "#ffd36b",
+      "to": "#7a1f3d"
+    },
+    {
+      "slug": "ideas",
+      "label": "Ideas",
+      "folder": "home",
+      "glyph": "lightbulb-filament",
+      "from": "#ffd36b",
+      "to": "#c2700a"
+    },
+    {
+      "slug": "promises",
+      "label": "Promises",
+      "folder": "home",
+      "glyph": "hand-heart",
+      "from": "#ff9ab8",
+      "to": "#9c2a52"
+    },
+    {
+      "slug": "bucket",
+      "label": "Bucket List",
+      "folder": "home",
+      "glyph": "mountains",
+      "from": "#ffb37a",
+      "to": "#b8402a"
+    },
+    {
+      "slug": "korean",
+      "label": "Korean",
+      "folder": "fun",
+      "glyph": "microphone-stage",
+      "from": "#9cb8d3",
+      "to": "#d7263d"
+    },
+    {
+      "slug": "languages",
+      "label": "Hangul",
+      "folder": "fun",
+      "glyph": "translate",
+      "from": "#b9a6ff",
+      "to": "#5b3fc4"
+    }
+  ]
+}

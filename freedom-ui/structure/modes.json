@@ -1,0 +1,114 @@
+{
+  "defaultMode": "personal",
+  "dock": [
+    "phone",
+    "atlas",
+    "todo",
+    "earth"
+  ],
+  "modes": [
+    {
+      "id": "personal",
+      "label": "Personal",
+      "glyph": "user-circle",
+      "accent": "#C7CCD3",
+      "look": "light",
+      "wallpaper": {
+        "type": "mesh",
+        "colors": [
+          "#C3CDDB",
+          "#F4F6F9",
+          "#D3DAE5",
+          "#F3F5F8"
+        ],
+        "grain": 0.06
+      },
+      "groups": [
+        "Health",
+        "Wealth",
+        "Retail",
+        "Wise",
+        "Family",
+        "Play",
+        "Everyday"
+      ],
+      "widgets": [
+        {
+          "id": "calendar",
+          "size": "medium"
+        },
+        {
+          "id": "weather",
+          "size": "small"
+        },
+        {
+          "id": "weigh-in",
+          "size": "small"
+        },
+        {
+          "id": "todos",
+          "size": "medium"
+        },
+        {
+          "id": "sleep",
+          "size": "small"
+        },
+        {
+          "id": "workouts-week",
+          "size": "small"
+        },
+        {
+          "id": "food",
+          "size": "medium"
+        },
+        {
+          "id": "headline",
+          "size": "medium"
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "label": "Work",
+      "glyph": "briefcase",
+      "accent": "#F5B700",
+      "look": "dark",
+      "wallpaper": {
+        "type": "mesh",
+        "colors": [
+          "#F5B700",
+          "#FF7A1A",
+          "#965F00",
+          "#130C02"
+        ],
+        "grain": 0.06
+      },
+      "widgets": [
+        {
+          "id": "calendar",
+          "size": "medium"
+        },
+        {
+          "id": "todos",
+          "size": "medium"
+        },
+        {
+          "id": "kanban-waiting",
+          "size": "small"
+        },
+        {
+          "id": "shipped",
+          "size": "small"
+        },
+        {
+          "id": "weather",
+          "size": "small"
+        },
+        {
+          "id": "what-to-wear",
+          "size": "small"
+        }
+      ]
+    }
+  ]
+}

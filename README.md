@@ -41,3 +41,7 @@ Run an architecture review of this repo
 ## Licence
 
 MIT.
+
+## Freedom UI
+
+[freedom-ui/](freedom-ui/) is a reference pack for rebuilding the Freedom look: screenshots, design tokens, the liquid-glass CSS, icons and the app structure.
